@@ -6,7 +6,11 @@
 class HelloGame : public pge::Game
 {
 public:
+    HelloGame();
+
     void init() override;
+
+    void draw() override;
 };
 
 #endif

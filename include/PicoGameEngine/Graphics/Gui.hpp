@@ -4,6 +4,7 @@
 #include <memory>
 #include <PicoGameEngine/Core/Config.hpp>
 #include <PicoGameEngine/Graphics/UiContainer.hpp>
+#include <PicoGameEngine/Utils/Vector2.hpp>
 
 namespace pge
 {
@@ -11,26 +12,27 @@ namespace pge
 
     class PGE_API Gui
     {
-        friend class Application;
-
     public:
-        Gui(const Gui & ) = delete;
+        Gui() = delete;
 
-        Gui(Gui && ) = delete;
+        explicit Gui(const Vector2U& size);
 
-        Gui & operator=(const Gui & ) = delete;
+        Gui(const Gui&) = delete;
 
-        Gui & operator=(Gui && ) = delete;
+        Gui(Gui&&) = delete;
 
-        ~Gui() = default;
+        Gui& operator=(const Gui&) = delete;
 
-        //void add_element(std::unique_ptr<UiElement> element);
+        Gui& operator=(Gui&&) = delete;
+
+        virtual ~Gui() = default;
+
+        void add_element(std::unique_ptr<UiElement> element);
+
+        void draw();
 
     private:
-        Gui() = default;
-
         UiContainer container_;
-    
     };
 }
 

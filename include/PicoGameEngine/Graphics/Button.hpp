@@ -7,10 +7,8 @@
 
 namespace pge
 {
-    class PGE_API Button :
-    public
-    virtual UiElement
-{
+    class PGE_API Button : public virtual UiElement
+    {
     public:
         Button() = default;
 
@@ -23,6 +21,8 @@ namespace pge
         Button& operator=(Button&&) = delete;
 
         virtual ~Button() = default;
+
+        void draw() override;
     };
 }
 

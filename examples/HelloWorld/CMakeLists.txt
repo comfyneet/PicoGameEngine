@@ -9,5 +9,3 @@ file(GLOB HELLOWORLD_SOURCES "*.hpp" "*.cpp")
 add_executable(HelloWorld ${HELLOWORLD_SOURCES})
 
 target_link_libraries(HelloWorld PicoGameEngine)
-
-install(TARGETS HelloWorld DESTINATION ${INSTALL_DIR})

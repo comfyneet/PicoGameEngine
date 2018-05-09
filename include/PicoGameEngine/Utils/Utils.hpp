@@ -12,7 +12,6 @@ namespace pge
         static int32_t random(int32_t min, int32_t max);
 
         Utils() = delete;
-    
     };
 }
 

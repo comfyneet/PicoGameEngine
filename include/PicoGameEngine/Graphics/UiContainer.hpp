@@ -14,21 +14,22 @@ namespace pge
     public:
         UiContainer() = default;
 
-        UiContainer(const UiContainer & ) = delete;
+        UiContainer(const UiContainer&) = delete;
 
-        UiContainer(UiContainer && ) = delete;
+        UiContainer(UiContainer&&) = delete;
 
-        UiContainer & operator=(const UiContainer & ) = delete;
+        UiContainer& operator=(const UiContainer&) = delete;
 
-        UiContainer & operator=(UiContainer && ) = delete;
+        UiContainer& operator=(UiContainer&&) = delete;
 
         virtual ~UiContainer() = default;
 
-        //void add(std::unique_ptr<UiElement> element);
+        void add_element(std::unique_ptr<UiElement> element);
+
+        void draw();
 
     private:
-        //std::list<std::unique_ptr<UiElement>> elements_;
-    
+        std::list<std::unique_ptr<UiElement>> elements_;
     };
 }
 

@@ -8,19 +8,30 @@ namespace pge
     class PGE_API UiElement
     {
     public:
-        UiElement(const UiElement & ) = delete;
+        UiElement(const UiElement&) = delete;
 
-        UiElement(UiElement && ) = delete;
+        UiElement(UiElement&&) = delete;
 
-        UiElement & operator=(const UiElement & ) = delete;
+        UiElement& operator=(const UiElement&) = delete;
 
-        UiElement & operator=(UiElement && ) = delete;
+        UiElement& operator=(UiElement&&) = delete;
 
         virtual ~UiElement() = default;
 
+        virtual void draw() = 0;
+
+        bool get_visible() const { return visible_; }
+
+        void set_visible(const bool visible) { visible_ = visible; }
+
     protected:
-        UiElement() = default;
-    
+        UiElement() :
+            visible_{}
+        {
+        }
+
+    private:
+        bool visible_;
     };
 }
 

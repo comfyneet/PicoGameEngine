@@ -9,10 +9,8 @@
 
 namespace pge
 {
-    class PGE_API Text :
-    public
-    virtual UiElement
-{
+    class PGE_API Text : public virtual UiElement
+    {
     public:
         Text() = delete;
 
@@ -31,6 +29,8 @@ namespace pge
         Text& operator=(Text&&) = delete;
 
         virtual ~Text() = default;
+
+        void draw() override;
 
     private:
         std::string text_;

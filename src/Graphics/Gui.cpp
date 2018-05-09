@@ -4,8 +4,17 @@
 
 namespace pge
 {
-    //void Gui::add_element(std::unique_ptr<UiElement> element)
-    //{
-    //    container_.add(std::move(element));
-    //}
+    Gui::Gui(const Vector2U&)
+    {
+    }
+
+    void Gui::add_element(std::unique_ptr<UiElement> element)
+    {
+        container_.add_element(std::move(element));
+    }
+
+    void Gui::draw()
+    {
+        container_.draw();
+    }
 }

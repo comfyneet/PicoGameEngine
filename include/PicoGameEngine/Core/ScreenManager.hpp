@@ -12,19 +12,18 @@ namespace pge
     public:
         ScreenManager() = default;
 
-        ScreenManager(const ScreenManager & ) = delete;
+        ScreenManager(const ScreenManager&) = delete;
 
-        ScreenManager(ScreenManager && ) = delete;
+        ScreenManager(ScreenManager&&) = delete;
 
-        ScreenManager & operator=(const ScreenManager & ) = delete;
+        ScreenManager& operator=(const ScreenManager&) = delete;
 
-        ScreenManager & operator=(ScreenManager && ) = delete;
+        ScreenManager& operator=(ScreenManager&&) = delete;
 
         virtual ~ScreenManager() = default;
 
     private:
         std::unique_ptr<Screen> current_screen_;
-    
     };
 }
 

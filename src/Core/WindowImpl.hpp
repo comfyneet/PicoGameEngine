@@ -16,21 +16,20 @@ namespace pge
     public:
         WindowImpl() = delete;
 
-        WindowImpl(const Vector2U & size, const std::string & title);
+        WindowImpl(const Vector2U& size, const std::string& title);
 
-        WindowImpl(const WindowImpl & ) = delete;
+        WindowImpl(const WindowImpl&) = delete;
 
-        WindowImpl(WindowImpl && ) = delete;
+        WindowImpl(WindowImpl&&) = delete;
 
-        WindowImpl & operator=(const WindowImpl & ) = delete;
+        WindowImpl& operator=(const WindowImpl&) = delete;
 
-        WindowImpl & operator=(WindowImpl && ) = delete;
+        WindowImpl& operator=(WindowImpl&&) = delete;
 
         virtual ~WindowImpl() = default;
 
     private:
         std::unique_ptr<GLFWwindow, std::function<void(GLFWwindow*)>> glfw_window_;
-    
     };
 }
 

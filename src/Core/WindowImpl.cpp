@@ -7,14 +7,14 @@ namespace priv
 {
     GLFWwindow* create(const pge::Vector2U& size, const std::string& title);
 
-    void delete_window(GLFWwindow * glfw_window);
+    void delete_window(GLFWwindow* glfw_window);
 }
 
 namespace pge
 {
     WindowImpl::WindowImpl(const Vector2U& size, const std::string& title)
     {
-        glfw_window_ = std::unique_ptr<GLFWwindow, std::function<void(GLFWwindow * )>>(
+        glfw_window_ = std::unique_ptr<GLFWwindow, std::function<void(GLFWwindow*)>>(
             priv::create(size, title),
             std::bind(&priv::delete_window, std::placeholders::_1));
     }

@@ -3,6 +3,7 @@
 #include <stdexcept>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <PicoGameEngine/Core/Game.hpp>
 
 namespace priv
 {
@@ -13,7 +14,7 @@ namespace priv
 
 namespace pge
 {
-    Application::Application(const Game& game) :
+    Application::Application(Game& game) :
         running_{},
         game_{game}
     {
@@ -40,6 +41,7 @@ namespace pge
 
         while (running_)
         {
+            game_.draw();
         }
     }
 

@@ -15,21 +15,20 @@ namespace pge
     public:
         Window() = delete;
 
-        Window(const Vector2U & size, const std::string & title);
+        Window(const Vector2U& size, const std::string& title);
 
-        Window(const Window & ) = delete;
+        Window(const Window&) = delete;
 
-        Window(Window && ) = delete;
+        Window(Window&&) = delete;
 
-        Window & operator=(const Window & ) = delete;
+        Window& operator=(const Window&) = delete;
 
-        Window & operator=(Window && ) = delete;
+        Window& operator=(Window&&) = delete;
 
         virtual ~Window() = default;
 
     private:
         std::unique_ptr<WindowImpl> window_impl_;
-    
     };
 }
 
